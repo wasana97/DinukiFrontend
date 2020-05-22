@@ -1,0 +1,97 @@
+.col {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 10px;
+  padding-left: 10px;
+  flex-basis: 0;
+  flex-grow: 1;
+}
+
+.col-1 {
+  flex: 0 0 8.33%;
+  max-width: 8.33%;
+}
+.col-2 {
+  flex: 0 0 16.66%;
+  max-width: 16.66%;
+}
+.col-3 {
+  flex: 0 0 24.99%;
+  max-width: 24.99%;
+}
+.col-4 {
+  flex: 0 0 33.32%;
+  max-width: 33.32%;
+}
+.col-5 {
+  flex: 0 0 41.65%;
+  max-width: 41.65%;
+}
+.col-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+.col-7 {
+  flex: 0 0 58.33%;
+  max-width: 58.33%;
+}
+.col-8 {
+  flex: 0 0 66.66%;
+  max-width: 66.66%;
+}
+.col-9 {
+  flex: 0 0 75%;
+  max-width: 75%;
+}
+.col-10 {
+  flex: 0 0 83.33%;
+  max-width: 83.33%;
+}
+.col-11 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+.col-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+// breakpoints map
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+// media query mixin
+@mixin break($size) {
+  @media (min-width: map-get($breakpoints, $size)) {
+    @content;
+  }
+}
+
+// number of columns variable
+$items: 12;
+
+// loop over the breakpoints
+@each $key, $value in $breakpoints {
+  @for $i from 1 through $items {
+    .col-#{$key}-#{$i} {
+      flex: 0 0 100%;
+      max-width: 100%;
+      @include break($key) {
+        flex: 0 0 #{$i / $items * 100%};
+        max-width: #{$i / $items * 100%};
+      }
+    }
+  }
+}

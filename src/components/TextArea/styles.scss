@@ -1,0 +1,24 @@
+.form-input {
+  position: relative;
+  margin-bottom: 15px;
+  textarea {
+    padding: 10px 20px;
+    width: 100%;
+    box-shadow: none;
+    border: none;
+    background-color: #f8f8f8;
+  }
+  &.has-errors {
+    textarea {
+      border-color: #cc6363 !important;
+      box-shadow: 0 0 2px 1px #ffa3a3;
+    }
+  }
+  .form-errors {
+    text-align: left;
+    font-size: 12px;
+    padding: 10px 0 0;
+    padding-bottom: 10px;
+    color: #cc6363;
+  }
+}

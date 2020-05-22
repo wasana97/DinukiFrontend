@@ -1,0 +1,109 @@
+.main-side-bar-container {
+  display: flex;
+  min-width: 275px;
+  font-family: "Montserrat";
+  .sidebar {
+    position: fixed;
+    overflow: auto;
+    height: 100%;
+    min-width: 90px;
+    display: flex;
+    flex-direction: column;
+    background-color: #333366;
+    color: #40404070;
+    .avatar {
+      margin: 20px auto;
+      i {
+        font-size: 50px;
+        color: white;
+      }
+    }
+    .menu-item {
+      display: flex;
+      flex-direction: column;
+      margin: 0px 5px;
+      min-width: 60px;
+      padding: 15px 0px;
+      i {
+        font-size: 30px;
+        color: #d1d1d1;
+        margin: auto auto 5px auto;
+      }
+      span {
+        display: block;
+        font-size: 8px;
+        color: #d1d1d1;
+        margin: auto;
+        padding-top: 10px;
+        text-transform: uppercase;
+        line-height: 1;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+        display: inherit;
+        flex-direction: inherit;
+      }
+    }
+    .active {
+      background-color: #0abab5;
+      opacity: 1 !important;
+      border-radius: 9px;
+      i {
+        color: rgb(255, 255, 255);
+        font-weight: 700;
+      }
+      span {
+        color: rgb(255, 255, 255);
+        font-weight: 700;
+      }
+    }
+  }
+  .side-menu-bar {
+    background-color: #ffffff;
+    width: 220px;
+    position: fixed;
+    overflow: auto;
+    margin-left: 90px;
+    height: 100%;
+    z-index: 999;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    .side-flip-container {
+      .category-header {
+        font-size: 12px;
+        font-weight: 700;
+        margin-top: 10px;
+        padding: 10px 0px 10px 10px;
+        color: rgb(32, 32, 32);
+        text-transform: uppercase;
+      }
+      .activeTitle {
+        background-color: #c0e9f8;
+        border-right: solid 5px #00abe7;
+      }
+      .category-sub-menu {
+        .sub-category-item {
+          font-size: 12px;
+          font-weight: 500;
+          margin-top: 10px;
+          margin-bottom: 10px;
+          padding: 10px 0px 10px 15px;
+          height: 15px;
+          color: #1d252c;
+          a {
+            text-decoration: none;
+            color: inherit;
+          }
+        }
+        .active {
+          background-color: #f2f2f2;
+          border-right: solid 5px #dedddc;
+        }
+      }
+    }
+  }
+}
+.main-side-bar-dashboard-container {
+  min-width: 80px !important;
+}

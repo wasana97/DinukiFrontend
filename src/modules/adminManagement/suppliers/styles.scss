@@ -1,0 +1,73 @@
+.add-supplier {
+  background: #ffffff;
+  border-radius: 5px;
+  border: 1px solid #e4e4e4;
+  padding: 20px 10px;
+  .add-supplier-container {
+    width: 60%;
+    .form-input {
+      input {
+        border: 1px solid #e6e6e6 !important;
+        border-radius: 5px;
+        margin-bottom: 10px;
+      }
+      textarea {
+        border: 1px solid #e6e6e6;
+        border-radius: 5px;
+      }
+    }
+    button {
+      margin-bottom: 10px;
+    }
+    .field-label {
+      font-size: 12px;
+      text-align: right;
+      padding-right: 20px;
+      padding-top: 10px;
+    }
+  }
+}
+.view-employee {
+  background: #ffffff;
+  border-radius: 5px;
+  border: 1px solid #e4e4e4;
+  padding: 20px 10px;
+  .filter-container {
+    .field-label {
+      font-size: 12px;
+      text-align: right;
+      padding-right: 20px;
+      padding-top: 10px;
+    }
+    .form-input {
+      input {
+        border: 1px solid #e6e6e6 !important;
+        border-radius: 5px;
+        margin-bottom: 10px;
+      }
+      textarea {
+        border: 1px solid #e6e6e6;
+        border-radius: 5px;
+      }
+    }
+  }
+}
+
+.download-table-xls-button {
+  cursor: pointer;
+  position: relative;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-align: center;
+  line-height: 1;
+  box-shadow: 0 0 black;
+  padding: 10px 30px;
+  font-size: 10px;
+  background: #a7a7a7;
+  border-color: #a7a7a7;
+  color: #ffffff;
+}

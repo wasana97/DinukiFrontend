@@ -1,0 +1,35 @@
+{
+  "parser": "babel-eslint",
+  "plugins": ["react", "promise", "flowtype"],
+  "globals": {
+    "module": true,
+    "process": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "classes": true,
+      "jsx": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:flowtype/recommended"
+  ],
+  "rules": {
+    "strict": 1,
+    "no-console": 1,
+    "react/no-danger": 1,
+    "react/prop-types": 1,
+    "no-unused-vars": 1,
+    "semi": 1,
+    "semi-style": 1,
+    "semi-spacing": 1
+  }
+}

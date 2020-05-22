@@ -1,0 +1,65 @@
+{
+  "name": "gaia-dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "add": "^2.0.6",
+    "aws-amplify": "^2.2.1",
+    "chart.js": "^2.9.3",
+    "classnames": "^2.2.6",
+    "connected-react-router": "^6.4.0",
+    "history": "^4.9.0",
+    "node-sass": "^4.12.0",
+    "react": "^16.8.6",
+    "react-chartjs-2": "^2.8.0",
+    "react-confirm-alert": "^2.6.1",
+    "react-dom": "^16.8.6",
+    "react-html-table-to-excel": "^2.0.0",
+    "react-phone-input-2": "^2.11.0",
+    "react-redux": "^7.0.3",
+    "react-router": "^5.0.0",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "3.0.1",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0",
+    "yarn": "^1.16.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "flow": "flow",
+    "flow:setup": "flow-typed install",
+    "test:coverage": "jest --coverage",
+    "test:all": "yarn lint && yarn flow",
+    "lint": "eslint src --ext .js,.jsx,.json"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-loader": "^2.1.2",
+    "eslint-plugin-flowtype": "^3.9.1",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-react": "^7.13.0",
+    "flow-bin": "^0.98.1",
+    "flow-typed": "^2.5.2",
+    "husky": "^2.3.0",
+    "prettier-eslint": "^8.8.2",
+    "redux-devtools-extension": "^2.13.8"
+  }
+}
