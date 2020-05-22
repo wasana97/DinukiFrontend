@@ -60,7 +60,7 @@ type AdminSalaryPaymentPageState = {
 class AdminSalaryPaymentPage extends Component<
   AdminSalaryPaymentPageProps,
   AdminSalaryPaymentPageState
-> {
+  > {
   constructor(props) {
     super(props);
 
@@ -201,14 +201,14 @@ class AdminSalaryPaymentPage extends Component<
     const selectedEmployee =
       filteredEmployee.length > 0
         ? filteredEmployee.map(
-            ({ employeeName, employeeType, salaryPerMonth }) => {
-              return {
-                employeeName,
-                employeeType,
-                salaryPerMonth
-              };
-            }
-          )
+          ({ employeeName, employeeType, salaryPerMonth }) => {
+            return {
+              employeeName,
+              employeeType,
+              salaryPerMonth
+            };
+          }
+        )
         : null;
 
     if (isNotEmpty(selectedEmployee)) {
@@ -285,7 +285,7 @@ class AdminSalaryPaymentPage extends Component<
 
     return (
       <Layout
-        breadcrumbs={["Add Leaves"]}
+        breadcrumbs={["Add Salary"]}
         actions={
           <Fragment>
             <Button type={Button.TYPE.DANGER} onClick={this.resetEmployee}>
@@ -306,143 +306,143 @@ class AdminSalaryPaymentPage extends Component<
           </Alert>
         )}
         {status === ASYNC_STATUS.LOADING ||
-        leaveStatus === ASYNC_STATUS.LOADING ? (
-          <Loader isLoading />
-        ) : (
-          <div className="pay-salary">
-            <div className="pay-salary-container">
-              <Row>
-                <Col>
-                  <Row>
-                    <Col className="field-label" sm={12} md={6}>
-                      Employee Id
+          leaveStatus === ASYNC_STATUS.LOADING ? (
+            <Loader isLoading />
+          ) : (
+            <div className="pay-salary">
+              <div className="pay-salary-container">
+                <Row>
+                  <Col>
+                    <Row>
+                      <Col className="field-label" sm={12} md={6}>
+                        Employee Id
                     </Col>
-                    <Col sm={12} md={6}>
-                      <Input
-                        id="employeeId"
-                        text={employeeId}
-                        onChange={employeeId =>
-                          this.onChangeFormField({ employeeId })
-                        }
-                      />
+                      <Col sm={12} md={6}>
+                        <Input
+                          id="employeeId"
+                          text={employeeId}
+                          onChange={employeeId =>
+                            this.onChangeFormField({ employeeId })
+                          }
+                        />
+                      </Col>
+                    </Row>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    <Button onClick={this.onSearchEmployee}>Search</Button>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    <Row>
+                      <Col className="field-label" sm={12} md={6}>
+                        Employee Name
                     </Col>
-                  </Row>
-                </Col>
-              </Row>
-              <Row>
-                <Col>
-                  <Button onClick={this.onSearchEmployee}>Search</Button>
-                </Col>
-              </Row>
-              <Row>
-                <Col>
-                  <Row>
-                    <Col className="field-label" sm={12} md={6}>
-                      Employee Name
+                      <Col sm={12} md={6}>
+                        <Input id="employeeName" text={employeeName} disabled />
+                      </Col>
+                    </Row>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    <Row>
+                      <Col className="field-label" sm={12} md={6}>
+                        Employee Type
                     </Col>
-                    <Col sm={12} md={6}>
-                      <Input id="employeeName" text={employeeName} disabled />
+                      <Col sm={12} md={6}>
+                        <Input id="employeeType" text={employeeType} disabled />
+                      </Col>
+                    </Row>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    <Row>
+                      <Col className="field-label" sm={12} md={6}>
+                        Basic Salary
                     </Col>
-                  </Row>
-                </Col>
-              </Row>
-              <Row>
-                <Col>
-                  <Row>
-                    <Col className="field-label" sm={12} md={6}>
-                      Employee Type
+                      <Col sm={12} md={6}>
+                        <Input
+                          id="salaryPerMonth"
+                          text={salaryPerMonth}
+                          disabled
+                        />
+                      </Col>
+                    </Row>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    <Row>
+                      <Col className="field-label" sm={12} md={6}>
+                        Bonus
                     </Col>
-                    <Col sm={12} md={6}>
-                      <Input id="employeeType" text={employeeType} disabled />
+                      <Col sm={12} md={6}>
+                        <Input
+                          id="bonus"
+                          text={bonus}
+                          onChange={bonus => this.onChangeFormField({ bonus })}
+                          error={errors.bonus}
+                          onBlur={this.calculateNetSalary}
+                        />
+                      </Col>
+                    </Row>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    <Row>
+                      <Col className="field-label" sm={12} md={6}>
+                        From
                     </Col>
-                  </Row>
-                </Col>
-              </Row>
-              <Row>
-                <Col>
-                  <Row>
-                    <Col className="field-label" sm={12} md={6}>
-                      Basic Salary
+                      <Col sm={12} md={6}>
+                        <Input
+                          id="from"
+                          type="date"
+                          text={from}
+                          onChange={from => this.onChangeFormField({ from })}
+                          error={errors.from}
+                        />
+                      </Col>
+                    </Row>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    <Row>
+                      <Col className="field-label" sm={12} md={6}>
+                        To
                     </Col>
-                    <Col sm={12} md={6}>
-                      <Input
-                        id="salaryPerMonth"
-                        text={salaryPerMonth}
-                        disabled
-                      />
+                      <Col sm={12} md={6}>
+                        <Input
+                          id="to"
+                          type="date"
+                          text={to}
+                          onChange={to => this.onChangeFormField({ to })}
+                          error={errors.to}
+                        />
+                      </Col>
+                    </Row>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    <Row>
+                      <Col className="field-label" sm={12} md={6}>
+                        Net Salary
                     </Col>
-                  </Row>
-                </Col>
-              </Row>
-              <Row>
-                <Col>
-                  <Row>
-                    <Col className="field-label" sm={12} md={6}>
-                      Bonus
-                    </Col>
-                    <Col sm={12} md={6}>
-                      <Input
-                        id="bonus"
-                        text={bonus}
-                        onChange={bonus => this.onChangeFormField({ bonus })}
-                        error={errors.bonus}
-                        onBlur={this.calculateNetSalary}
-                      />
-                    </Col>
-                  </Row>
-                </Col>
-              </Row>
-              <Row>
-                <Col>
-                  <Row>
-                    <Col className="field-label" sm={12} md={6}>
-                      From
-                    </Col>
-                    <Col sm={12} md={6}>
-                      <Input
-                        id="from"
-                        type="date"
-                        text={from}
-                        onChange={from => this.onChangeFormField({ from })}
-                        error={errors.from}
-                      />
-                    </Col>
-                  </Row>
-                </Col>
-              </Row>
-              <Row>
-                <Col>
-                  <Row>
-                    <Col className="field-label" sm={12} md={6}>
-                      To
-                    </Col>
-                    <Col sm={12} md={6}>
-                      <Input
-                        id="to"
-                        type="date"
-                        text={to}
-                        onChange={to => this.onChangeFormField({ to })}
-                        error={errors.to}
-                      />
-                    </Col>
-                  </Row>
-                </Col>
-              </Row>
-              <Row>
-                <Col>
-                  <Row>
-                    <Col className="field-label" sm={12} md={6}>
-                      Net Salary
-                    </Col>
-                    <Col sm={12} md={6}>
-                      <Input id="netSalary" text={netSalary} disabled />
-                    </Col>
-                  </Row>
-                </Col>
-              </Row>
+                      <Col sm={12} md={6}>
+                        <Input id="netSalary" text={netSalary} disabled />
+                      </Col>
+                    </Row>
+                  </Col>
+                </Row>
+              </div>
             </div>
-          </div>
-        )}
+          )}
       </Layout>
     );
   }
